@@ -1,0 +1,24 @@
+Voici une explication détaillée de chaque partie de votre code :
+
+Initialisation et Libération d'un Maillage (initMaillage, freeMaillage)
+initMaillage : Alloue la mémoire pour un nouveau maillage, incluant un certain nombre de sommets et de faces.
+freeMaillage : Libère la mémoire allouée pour un maillage.
+Lecture d'un Fichier OBJ (lireObj)
+Cette fonction lit un fichier OBJ et remplit un maillage avec des données (sommets et faces). Elle compte d'abord le nombre de sommets (v) et de faces (f), puis remplit les structures de données correspondantes.
+Calcul des Centroides (calculerCentroid, genererCentroides)
+calculerCentroid : Calcule le centroïde d'une face en utilisant les coordonnées de ses sommets.
+genererCentroides : Génère un tableau de tous les centroides pour chaque face dans le maillage.
+Création et Tri des Arêtes (creerAretes, ajouterAreteSiUnique, trierAretesParSelection)
+creerAretes : Identifie et crée des arêtes à partir de paires de faces ayant des sommets communs.
+ajouterAreteSiUnique : Ajoute une arête au tableau d'arêtes si elle n'est pas déjà présente (évite les doublons).
+trierAretesParSelection : Trie les arêtes en utilisant l'algorithme du tri par sélection, basé sur la valeur calculée par valeurCentroide.
+Génération des Arêtes Duales (genererAretesDuales)
+Cette fonction prend les arêtes triées et génère des arêtes duales en connectant les centroides des faces correspondantes.
+Écriture des Résultats dans un Fichier (ecrireAretesDualesDansFichier)
+Écrit les informations des arêtes duales dans un fichier spécifié.
+Mesure des Performances et Fonction main
+La fonction main orchestre tout le processus : lecture du fichier OBJ, création et tri des arêtes, génération des arêtes duales, écriture dans un fichier, et mesure du temps d'exécution.
+Le temps d'exécution pour la génération des arêtes duales est mesuré en utilisant clock() de la bibliothèque <time.h>.
+Complexité Algorithmique
+Le tri par sélection a une complexité temporelle de O(n²), où n est le nombre d'arêtes. C'est parce qu'il compare chaque élément avec tous les autres éléments pour trouver le minimum.
+La génération des arêtes et des centroides dépend du nombre de faces et de sommets, mais ces opérations sont généralement linéaires par rapport au nombre de faces.

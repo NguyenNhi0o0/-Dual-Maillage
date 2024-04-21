@@ -1,0 +1,29 @@
+Rapport du Code : Gestion de Maillage et Arêtes Duales avec Tri par Sélection
+
+
+Objectif:
+Le programme implémente un système pour manipuler des maillages 3D. Il inclut la lecture de fichiers de maillage, le calcul des centroïdes, la création et le tri d'arêtes, la génération d'arêtes duales, et l'écriture des résultats dans un fichier.
+
+
+Fonctionnalités Principales:
+Lecture de Maillage (lireObj): Lit un fichier .obj, comptant les sommets et les faces, et stocke ces informations dans une structure Maillage.
+
+Initialisation et Libération de Maillage (initMaillage, freeMaillage): Alloue et libère la mémoire pour la structure Maillage.
+
+Calcul de Centroides (calculerCentroid, genererCentroides): Calcule le centroïde pour chaque face du maillage.
+
+Création et Tri d'Arêtes (creerAretes, trierAretesParSelection): Crée un tableau d'arêtes à partir des faces du maillage et les trie en utilisant le tri par sélection, basé sur les valeurs de centroïdes.
+
+Génération d'Arêtes Duales (genererAretesDuales): Génère un tableau d'arêtes duales à partir du tableau d'arêtes triées.
+
+Écriture des Résultats (ecrireAretesDualesDansFichier): Écrit les informations des arêtes duales dans un fichier.
+
+
+Évaluation de l'Algorithme de Tri par Sélection:
+Efficacité: Le tri par sélection est un algorithme de tri simple mais généralement peu efficace, surtout pour de grands ensembles de données. Il a une complexité temporelle en O(n²), où n est le nombre d'éléments à trier. Dans le contexte des maillages 3D, si le nombre d'arêtes est élevé, cet algorithme pourrait devenir un goulot d'étranglement en termes de performance.
+
+Comparaison avec d'autres algorithmes: Des algorithmes de tri plus avancés comme le tri rapide (Quicksort) ou le tri fusion (Merge sort) offrent généralement de meilleures performances avec une complexité en O(n log n) en moyenne.
+
+Coût (Prix) de l'Algorithme
+Le "prix" de l'utilisation du tri par sélection réside principalement dans son inefficacité pour de grands ensembles de données. Dans un contexte professionnel, cela pourrait se traduire par des temps de traitement plus longs et potentiellement une utilisation accrue des ressources informatiques (CPU, mémoire), ce qui peut avoir un impact financier indirect en termes de coûts d'exploitation.
+Suggestions d'Amélioration

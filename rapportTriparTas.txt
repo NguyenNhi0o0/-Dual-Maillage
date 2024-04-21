@@ -1,0 +1,33 @@
+1. maxHeapify(Arete *aretes, int n, int i, Maillage *m)
+elle assure que le sous-arbre avec la racine à l'indice i est un tas maximal. elle fonctionne :
+
+Arete *aretes : Le tableau d'arêtes à organiser en tas.
+int n : La taille du tas.
+int i : L'indice de la racine du sous-arbre à organiser en tas.
+Maillage *m : Un pointeur vers le maillage, nécessaire pour calculer les valeurs des centroïdes.
+La fonction compare la valeur du nœud i avec ses nœuds enfants (si présents). Si un des enfants a une valeur plus grande (déterminée par valeurCentroide), elle échange les nœuds et appelle récursivement maxHeapify pour le sous-arbre de l'enfant.
+
+2. buildMaxHeap(Arete *aretes, int n, Maillage *m)
+Cette fonction transforme un tableau en tas maximal.
+
+Arete *aretes : Le tableau d'arêtes à organiser en tas.
+int n : La taille du tableau.
+Maillage *m : Un pointeur vers le maillage, utilisé pour calculer les valeurs des centroïdes.
+La fonction parcourt les nœuds non-feuille du tableau (commençant de la moitié du tableau et remontant jusqu'au début) et applique maxHeapify pour assurer que chaque sous-arbre est un tas maximal.
+
+3. heapSort(Arete *aretes, int n, Maillage *m)
+Cette fonction réalise le tri par tas sur le tableau.
+
+Arete *aretes : Le tableau d'arêtes à trier.
+int n : La taille du tableau.
+Maillage *m : Un pointeur vers le maillage, utilisé pour les calculs de valeur des centroïdes.
+La fonction commence par transformer le tableau en tas maximal en utilisant buildMaxHeap. Ensuite, elle déplace successivement l'élément de tête du tas (le plus grand élément) à la fin du tableau et réduit la taille du tas de 1. Après chaque déplacement, elle réorganise le tas (sans l'élément déplacé) en utilisant maxHeapify.
+
+Efficacité de l'Algorithme
+Complexité du Tri par Tas : Le tri par tas est un algorithme de tri efficace avec une complexité temporelle de O(n log n) dans le pire des cas. 
+
+Optimisation et Performance : Le code utilise des techniques comme le tri en place et la manipulation directe des tableaux, ce qui contribue à une bonne performance. Cependant, le temps d'exécution réel dépend de la taille du maillage.
+
+Utilisation de la Mémoire : Le code gère correctement la mémoire, avec des appels appropriés à malloc et free. Cette gestion est cruciale pour éviter les fuites de mémoire, en particulier lors du traitement de grands maillages.
+
+

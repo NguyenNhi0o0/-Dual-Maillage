@@ -1,0 +1,32 @@
+Structure et Fonctionnement
+Initialisation et Libération du Maillage :
+
+Les fonctions initMaillage et freeMaillage gèrent correctement l'allocation et la libération de la mémoire pour le maillage.
+Usage de malloc et free pour prévenir les fuites de mémoire.
+Lecture de Fichiers OBJ :
+
+La fonction lireObj lit et interprète les données d'un fichier OBJ, en extrayant les sommets et les faces du maillage.
+Bonne gestion des erreurs de fichier (par exemple, fichier non trouvé).
+Calcul des Centroides :
+
+La fonction calculerCentroid et genererCentroides calculent correctement les centroïdes pour chaque face du maillage.
+
+
+Création des Arêtes :
+
+La fonction creerAretes génère efficacement les arêtes du maillage en évitant les doublons.
+L'algorithme pour détecter les sommets communs entre deux faces est simple et direct.
+
+
+Affichage des Résultats :
+
+Le programme affiche les données pertinentes, telles que les nombres de sommets et de faces, ainsi que les détails des arêtes et des centroïdes.
+
+Performance et Optimisation
+Efficacité de la Génération des Arêtes :
+
+Le processus de génération des arêtes est O(n^2) en raison de la double boucle. 
+
+Utilisation de la Mémoire :
+
+Le programme semble gérer la mémoire de manière prudente, mais une attention supplémentaire pourrait être nécessaire pour les très grands maillages.
